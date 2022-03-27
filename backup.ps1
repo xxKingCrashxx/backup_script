@@ -13,7 +13,7 @@ $DestFile = "$($DestDir + 'backup-' + $BackUpDate + '.zip')"
 
 if(Test-Path $DestFile)
 {
-    rmdir -Recurse -Force $DestFile
+    Remove-Item -Recurse -Force $DestFile
 }
 Compress-Archive -Path $SrcDir -CompressionLevel 'Fastest' -DestinationPath "$($DestDir + 'backup-' + $BackUpDate)"
 Write-Host "file backup successfully created at $($DestDir + 'backup-' + $BackUpDate)"
